@@ -17,11 +17,19 @@ function run(){
 
 // pick random centroids (means)
 var pickRandomMeans = function(k) {
-
     //  -------------------------
     //  YOUR CODE
     //  -------------------------
+    var means = [];
+    var x = 0;
+    var y = 0;
 
+    for(var i=0; i<k; i++){
+        x = Math.floor(Math.random()*640); //640 = x max of our dataset
+        y = Math.floor(Math.random()*480); //480 = y max of our dataset
+        means.push({x:x,y:y});
+    }
+    return means;
     //return format:
     // [{x:1,y:7},{x:10,y:5},{x:4,y:11}];
 };

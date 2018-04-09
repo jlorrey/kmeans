@@ -20,8 +20,17 @@ function assignCentroids(means) {
     // -------------------------------
     //      YOUR CODE
     // -------------------------------  
+   
+    var distances = means.map(function(means){
+        dx = point.x - mean.x;
+        dy = point.y - mean.y;
+        return Math.sqrt(dx*dx + dy*dy);
+    });
+    
+    var minDistance = Math.min.apply(null, distances);
+    point.centroid = distances.indexOf(minDistance);
 
-}
+};
 
 // data points for kMeans
 var data = [

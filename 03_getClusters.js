@@ -50,6 +50,17 @@ function getClusters(k){
     ]
 
     */
+    // data clean-up step:
+    var clusters = [];
+    function getCluster(data, counter){
+        return data.filter(function(point){
+            return point.centroid === counter;
+        });
+    }
+    for(var i=0; i<k; i++){
+        clusters.push(getCluster(data,i));
+    }
+    return clusters;
 }
 
 

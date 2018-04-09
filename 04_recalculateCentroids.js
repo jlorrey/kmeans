@@ -25,9 +25,22 @@ function run(){
 function recalculateCentroids(clusters){
 
     //  -------------------------
-    //      YOUR CODE
+    //      YOUR CODE 
     //  -------------------------
+    var means = [];
+    clusters.forEach(function(cluster){
+        var xSum = 0;
+        var ySum = 0;
+        cluster.forEach(function(point){
+            xSum+=point.x;
+            ySum+=point.y;
+        });
+        var x_centroid = Math.floor(xSum/cluster.length);
+        var y_centroid = Math.floor(ySum/cluster.length);
 
+        means[i] = {x:xCentroid, y:yCentroid};
+    });
+    return means;
     //return format:
     // [{x:1,y:7},{x:10,y:5},{x:4,y:11}];
 }
